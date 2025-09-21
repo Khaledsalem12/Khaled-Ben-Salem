@@ -1,0 +1,24 @@
+:root{
+  --max-w: 1000px;
+  --accent: #0b69a3;
+  --bg: #fff;
+  --text: #222;
+  --muted: #666;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;color:var(--text);background:#f6f7f8;line-height:1.5}
+.container{max-width:var(--max-w);margin:0 auto;padding:20px}
+.site-header{background:var(--bg);border-bottom:1px solid #e6e6e6}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.brand{margin:10px 0;font-size:1.1rem}
+nav a{margin-left:12px;text-decoration:none;color:var(--muted)}
+.hero{background:white;padding:24px;border-radius:8px;margin:18px 0}
+.btn{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:6px;text-decoration:none;background:var(--accent);color:white}
+section{background:white;padding:18px;border-radius:8px;margin-bottom:14px}
+.project img{max-width:100%;height:auto;border-radius:6px;margin-top:8px}
+.site-footer{padding:12px;text-align:center;color:var(--muted);font-size:0.9rem;margin-top:20px}
+@media(min-width:900px){
+  nav a{margin-left:18px}
+  .hero{display:flex;justify-content:space-between;align-items:center}
+  .hero p{max-width:60%}
+}
