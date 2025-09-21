@@ -3,65 +3,80 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Khaled Ben Salem — Photovoltaic Engineer</title>
-  <meta name="description" content="Khaled Ben Salem — PV engineer. Design, project management, PVSyst, AutoCAD." />
+  <title>Khaled Ben Salem — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,sans-serif;margin:0;background:#f6f7f8;color:#222}
+    header{background:#0b69a3;color:white;padding:20px;text-align:center}
+    header h1{margin:0;font-size:1.8rem}
+    header p{margin:6px 0 0;font-size:1rem;color:#dce6ef}
+    .tabs{display:flex;justify-content:center;background:white;border-bottom:2px solid #ddd}
+    .tabs button{flex:1;padding:14px;border:none;cursor:pointer;font-size:1rem;background:#fff;transition:background .3s}
+    .tabs button.active{background:#0b69a3;color:white;font-weight:bold}
+    .tab-content{max-width:900px;margin:20px auto;background:white;padding:20px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.05)}
+    h2{margin-top:0;color:#0b69a3}
+    ul{line-height:1.6}
+    .project{margin-bottom:18px}
+    .project img{max-width:100%;border-radius:6px;margin-top:8px}
+    footer{text-align:center;padding:15px;font-size:0.9rem;color:#666}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="brand">Khaled Ben Salem</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="index_fr.html" class="lang">Français</a>
-      </nav>
-    </div>
+  <header>
+    <h1>Khaled Ben Salem</h1>
+    <p>Photovoltaic Engineer · 8+ years experience</p>
   </header>
 
-  <main class="container">
-    <section id="hero" class="hero">
-      <h2>Photovoltaic Engineer — 8+ years</h2>
-      <p>Design, project management and operations for utility-scale PV plants. Expert in PVSyst, AutoCAD, MS Project and monitoring systems.</p>
-      <a class="btn" href="resume_en.pdf" download>Download résumé (EN)</a>
-    </section>
+  <div class="tabs">
+    <button class="tablink active" onclick="openTab(event,'about')">About</button>
+    <button class="tablink" onclick="openTab(event,'skills')">Skills</button>
+    <button class="tablink" onclick="openTab(event,'projects')">Projects</button>
+  </div>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>Short bio: I’m an energy engineer specializing in photovoltaic systems, responsible for technical plans, 3D modelling and project management.</p>
-    </section>
+  <div id="about" class="tab-content">
+    <h2>About Me</h2>
+    <p>I am an energy engineer with over 8 years of experience in photovoltaic project design, management, and optimization. Currently Operations Manager, I lead technical teams and oversee solar PV plants, from conception to execution.</p>
+  </div>
 
-    <section id="skills">
-      <h2>Skills & Tools</h2>
-      <ul>
-        <li>PVSyst · Digsilent PowerFactory · AutoCAD · Caneco BT · Archelios Calc</li>
-        <li>MS Project · Office Suite</li>
-        <li>Medium voltage installations (HTA)</li>
-        <li>Meteocontrol · Solarlog · Huawei · Sungrow</li>
-        <li>French (fluent) · English (B1+) · Arabic (native)</li>
-      </ul>
-    </section>
+  <div id="skills" class="tab-content" style="display:none">
+    <h2>Skills & Tools</h2>
+    <ul>
+      <li>PVSyst · Digsilent PowerFactory · AutoCAD · Caneco BT · Archelios Calc</li>
+      <li>MS Project · Office Suite</li>
+      <li>Medium voltage installations (HTA)</li>
+      <li>Monitoring: Meteocontrol · Solarlog · Huawei · Sungrow</li>
+      <li>Languages: French (fluent), English (B1+), Arabic (native)</li>
+    </ul>
+  </div>
 
-    <section id="projects">
-      <h2>Selected Projects</h2>
-      <article class="project">
-        <h3>VTL Menzel TEMIME — 4.6 MWc</h3>
-        <p>Role: Operations Manager. Short description of your responsibilities and results.</p>
-        <img src="images/project1.jpg" alt="VTL Menzel TEMIME overview" />
-      </article>
-    </section>
+  <div id="projects" class="tab-content" style="display:none">
+    <h2>Selected Projects</h2>
+    <div class="project">
+      <h3>VTL Menzel TEMIME — 4.6 MWc</h3>
+      <p>Role: Operations Manager. Responsible for supervision, monitoring integration, and performance optimization.</p>
+      <img src="images/project1.jpg" alt="VTL Menzel TEMIME project image" />
+    </div>
+    <div class="project">
+      <h3>PV Pulse Platform (in progress)</h3>
+      <p>Developing an AI-powered monitoring platform integrating multi-brand solar inverters for real-time performance comparison.</p>
+      <img src="images/project2.jpg" alt="PV Pulse dashboard" />
+    </div>
+  </div>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:your.email@example.com">bensalemkhaled@gmail.com</a></p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">© 2025 Khaled Ben Salem</div>
+  <footer>
+    © 2025 Khaled Ben Salem · <a href="mailto:your.email@example.com">your.email@example.com</a>
   </footer>
+
+  <script>
+    function openTab(evt, tabId) {
+      // hide all tabs
+      document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+      // deactivate buttons
+      document.querySelectorAll('.tablink').forEach(btn => btn.classList.remove('active'));
+      // show selected
+      document.getElementById(tabId).style.display = 'block';
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
 </body>
 </html>
-
